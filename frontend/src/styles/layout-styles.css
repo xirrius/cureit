@@ -1,3 +1,15 @@
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+
 .main {
   padding: 20px;
   height: 100vh;
@@ -11,11 +23,19 @@
   min-height: 100%;
   width: 300px;
   border-radius: 5px;
-  background-color: rgb(59, 94, 125);
+  /* background-color: rgb(59, 94, 125); */
+  background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
   box-shadow: 0 0 2px grey;
   margin-right: 20px;
   margin-bottom: 20px;
   color: whitesmoke;
+  
 }
 
 .content {
@@ -27,16 +47,16 @@
   border-radius: 5px;
   height: 10vh;
   margin-bottom: 20px;
-  box-shadow: 0 0 2px grey;
-  background-color: aliceblue;
+  box-shadow: 5px 5px 5px rgb(197, 197, 197);
+  background: rgb(246, 245, 244);
 }
 
 .body {
   border-radius: 5px;
   height: 85vh;
   margin-bottom: 20px;
-  box-shadow: 0 0 2px grey;
-  background-color: aliceblue;
+  box-shadow: 5px 5px 5px rgb(197, 197, 197);
+  background: l#fafafa;
 }
 
 .logo h1 {
@@ -65,30 +85,31 @@
 
 .active {
   background-color: whitesmoke;
-  color: rgb(59, 94, 125);
+  color: rgb(232, 81, 47);
 }
 
 .active a {
-  color: rgb(59, 94, 125);
+  color: rgb(232, 81, 47);
 }
 
 .header-content {
   margin: 0 15px;
   display: flex;
   align-items: center;
-  height: 50px;
-  justify-content: flex-end;
+  height: 65px;
+  justify-content: space-between;
 }
 
 .header-content i {
   margin-right: 20px;
   font-size: 1.2rem;
+   color: rgb(255, 102, 0);
 }
 
 .header-content a {
   font-size: 1.2rem;
   text-decoration: none;
-  color: rgb(31, 78, 130);
+  color: rgb(255, 102, 0);
   margin: 0 10px;
   text-transform: uppercase;
 }

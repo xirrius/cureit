@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { showLoading, hideLoading } from "../../redux/features/alertSlice";
 import moment from "moment";
+import "../../styles/main-styles.css";
+
 
 const Profile = () => {
   const { user } = useSelector((state) => state.user);
@@ -92,7 +94,7 @@ const Profile = () => {
 
   return (
     <Layout>
-      <h1>Manage Profile</h1>
+      <h1 className="text-center heading">Manage Profile</h1>
       {staff && (
         <Form
           layout="vertical"

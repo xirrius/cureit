@@ -94,13 +94,23 @@ const Layout = ({ children }) => {
           <div className="content">
             <div className="header">
               <div className="header-content" style={{ cursor: "pointer" }}>
+                  <Link to="/" className="fw-bold">
+                    Hi, {user?.name}
+                  </Link>
+                
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style={{ width: "105px", height: "80px" }}
+                    alt="logo"
+                    onClick={() => navigate("/")}
+                  />
+              
                 <Badge
                   count={user && user.notification.length}
                   onClick={() => navigate("/notification")}
                 >
                   <i className="fa-solid fa-bell"></i>
                 </Badge>
-                <Link to="/profile">{user?.name}</Link>
               </div>
             </div>
             <div className="body">{children}</div>

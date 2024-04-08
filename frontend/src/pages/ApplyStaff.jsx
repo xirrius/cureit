@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import axios from "axios";
+import "../styles/main-styles.css";
+
 // import moment from "moment";
 
 const ApplyStaff = () => {
@@ -48,7 +50,7 @@ const ApplyStaff = () => {
   };
   return (
     <Layout>
-      <h1 className="text-center">Apply For Staff</h1>
+      <h1 className="text-center heading">Apply For Staff</h1>
       <Form layout="vertical" onFinish={handleFinish} className="m-3">
         <h4 className="">Personal Details</h4>
         <Row gutter={20}>
@@ -153,7 +155,10 @@ const ApplyStaff = () => {
           <Col xs={24} md={24} lg={8}></Col>
         </Row>
         <div className="d-flex justify-content-start">
-          <button className="btn btn-primary form-btn" type="submit">
+          <button
+            className="btn text-white gradient-custom-2 form-btn"
+            type="submit"
+          >
             Submit
           </button>
         </div>

@@ -6,6 +6,8 @@ import { Form, Row, Col, Input, message } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
+import "../styles/main-styles.css";
+
 
 const Profile = () => {
   const { user } = useSelector((state) => state.user);
@@ -74,7 +76,7 @@ const Profile = () => {
 
   return (
     <Layout>
-      <h1>Manage Profile</h1>
+      <h1 className="text-center heading">Manage Profile</h1>
       {endUser && (
         <Form
           layout="vertical"
@@ -150,7 +152,7 @@ const Profile = () => {
                 <Input type="text" placeholder="address" />
               </Form.Item>
             </Col> */}
-          {/* </Row>
+            {/* </Row>
           <h4>Professional Details :</h4>
           <Row gutter={20}>
             <Col xs={24} md={24} lg={8}>
@@ -191,7 +193,7 @@ const Profile = () => {
             <Col xs={24} md={24} lg={8}></Col>
           </Row>
           <div className="d-flex justify-content-start">
-            <button className="btn btn-primary form-btn" type="submit">
+            <button className="btn text-white gradient-custom-2 form-btn" type="submit">
               Update
             </button>
           </div>

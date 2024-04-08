@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../styles/main-styles.css"
 
 const NotificationPage = () => {
   const dispatch = useDispatch();
@@ -61,17 +62,17 @@ const NotificationPage = () => {
   };
   return (
     <Layout>
-      <h1 className="p-3 text-center">Notifications</h1>
+      <h1 className="p-3 text-center heading">Notifications</h1>
       <Tabs>
         <Tabs.TabPane tab="Unread" key={0}>
           <div className="d-flex justify-content-end">
-            <h6
-              className="m-2 p-2 text-white bg-info rounded-3"
+            <button
+              className="btn btn-outline-warning rounded-3 me-3"
               onClick={handleMarkAllRead}
               style={{ cursor: "pointer" }}
             >
               Mark All Read
-            </h6>
+            </button>
           </div>
           {user?.notification.map((notificationMsg) => (
             // eslint-disable-next-line react/jsx-key
@@ -87,13 +88,13 @@ const NotificationPage = () => {
         </Tabs.TabPane>
         <Tabs.TabPane tab="Read" key={1}>
           <div className="d-flex justify-content-end">
-            <h6
-              className="m-2 p-2 text-white bg-danger rounded-3"
+            <button
+              className="btn btn-outline-danger rounded-3 me-3" 
               style={{ cursor: "pointer" }}
               onClick={handleDeleteAllRead}
             >
               Delete All Read
-            </h6>
+            </button>
           </div>
           {user?.seenNotification.map((notificationMsg) => (
             // eslint-disable-next-line react/jsx-key

@@ -6,6 +6,7 @@ import { DatePicker, TimePicker, message } from "antd";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { hideLoading, showLoading } from "../redux/features/alertSlice";
+import "../styles/main-styles.css";
 
 const BookingPage = () => {
   const { user } = useSelector((state) => state.user);
@@ -98,7 +99,7 @@ const BookingPage = () => {
   }, []);
   return (
     <Layout>
-      <h1 className="text-center">Booking Page</h1>
+      <h1 className="text-center heading">Booking Page</h1>
       <div className="container">
         {doctor && (
           <div>
@@ -128,15 +129,15 @@ const BookingPage = () => {
                 }}
               />
               <button
-                className="btn btn-primary mt-2"
+                className="btn btn-outline-danger mt-2"
                 onClick={handleAvailability}
               >
                 Check Availability
               </button>
               {/* {!isAvailable && ( */}
-                <button className="btn btn-dark mt-2" onClick={handleBooking}>
-                  Book Now
-                </button>
+              <button className="btn btn-dark mt-2" onClick={handleBooking}>
+                Book Now
+              </button>
               {/* )} */}
             </div>
           </div>

@@ -2,6 +2,8 @@ import Layout from "../../components/Layout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { message, Table } from "antd";
+import "../../styles/main-styles.css";
+
 
 const Staff = () => {
   const [staff, setStaff] = useState([]);
@@ -90,7 +92,7 @@ const Staff = () => {
 
   return (
     <Layout>
-      <h1 className="text-center m-2">Staff</h1>
+      <h1 className="text-center m-2 heading">Staff</h1>
       <Table columns={columns} dataSource={staff} />
     </Layout>
   );

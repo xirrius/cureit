@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import axios from "axios";
 import { message, Table } from "antd";
+import "../../styles/main-styles.css";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -77,7 +78,7 @@ const Users = () => {
 
   return (
     <Layout>
-      <h1 className="text-center m-2">Users</h1>
+      <h1 className="text-center m-2 heading">Users</h1>
       <Table columns={columns} dataSource={users} />
     </Layout>
   );
