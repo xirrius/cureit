@@ -1,0 +1,94 @@
+.main {
+  padding: 20px;
+  height: 100vh;
+}
+
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  min-height: 100%;
+  width: 300px;
+  border-radius: 5px;
+  background-color: rgb(59, 94, 125);
+  box-shadow: 0 0 2px grey;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: whitesmoke;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  border-radius: 5px;
+  height: 10vh;
+  margin-bottom: 20px;
+  box-shadow: 0 0 2px grey;
+  background-color: aliceblue;
+}
+
+.body {
+  border-radius: 5px;
+  height: 85vh;
+  margin-bottom: 20px;
+  box-shadow: 0 0 2px grey;
+  background-color: aliceblue;
+}
+
+.logo h1 {
+  text-align: center;
+  margin: 20px 5px;
+}
+
+.menu {
+  margin-top: 50px;
+}
+
+.menu-item {
+  margin-top: 30px;
+}
+
+.menu-item a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.menu-item i {
+  font-size: 1.2rem;
+  margin: 0 15px;
+}
+
+.active {
+  background-color: whitesmoke;
+  color: rgb(59, 94, 125);
+}
+
+.active a {
+  color: rgb(59, 94, 125);
+}
+
+.header-content {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+.header-content i {
+  margin-right: 20px;
+  font-size: 1.2rem;
+}
+
+.header-content a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(31, 78, 130);
+  margin: 0 10px;
+  text-transform: uppercase;
+}
