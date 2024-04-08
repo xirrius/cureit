@@ -24,6 +24,25 @@ const Users = () => {
       message.error("Something went wrong");
     }
   };
+  const handleBlock = async (record) => {
+    try {
+      const res = await axios.post(
+        "/api/v1/admin/block-user",
+        { personId: record._id },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (res.data.success) {
+        message.success(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      message.error("Something went wrong");
+    }
+  }
   useEffect(() => {
     getUsers();
   }, []);
@@ -48,7 +67,9 @@ const Users = () => {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          <button className="btn btn-danger">Block</button>
+          <button className="btn btn-danger" 
+          onClick={() => handleBlock(record)}
+          >Block</button>
         </div>
       ),
     },

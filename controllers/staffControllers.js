@@ -86,7 +86,7 @@ const updateStatus = async (req, res) => {
     user.notification.push({
       type: "status-updated",
       message: `Your appointment has been updated. Current status: ${status}`,
-      onClickPath: "/user/appointments",
+      onClickPath: "/appointments",
     });
     await user.save();
     res.status(200).json({

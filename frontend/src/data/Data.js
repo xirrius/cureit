@@ -1,30 +1,36 @@
-export const UserMenu = [
-  {
-    name: "Home",
-    path: "/",
-    icon: "fa-solid fa-house",
-  },
-  {
-    name: "Profile",
-    path: "/profile",
-    icon: "fa-solid fa-user",
-  },
-  // {
-  //   name: "Consult A Doctor",
-  //   path: "/consultations",
-  //   icon: "fa-solid fa-user-doctor",
-  // },
-  {
-    name: "Appointments",
-    path: "/appointments",
-    icon: "fa-solid fa-list-ul",
-  },
-  {
-    name: "Apply for Staff",
-    path: "/apply-staff",
-    icon: "fa-solid fa-user-doctor",
-  },
-];
+
+// export const UserMenu = [
+//   {
+//     name: "Home",
+//     path: "/",
+//     icon: "fa-solid fa-house",
+//   },
+//   {
+//     name: "Profile",
+//     path: "/profile",
+//     icon: "fa-solid fa-user",
+//   },
+//   // {
+//   //   name: "Consult A Doctor",
+//   //   path: "/consultations",
+//   //   icon: "fa-solid fa-user-doctor",
+//   // },
+//   {
+//     name: "Appointments",
+//     path: "/appointments",
+//     icon: "fa-solid fa-list-ul",
+//   },
+//   {
+//     name: "Apply for Staff",
+//     path: "/apply-staff",
+//     icon: "fa-solid fa-user-doctor",
+//   },
+//   {
+//     name: "Profile",
+//     path: `/staff/profile/${user?._id}`,
+//     icon: "fa-solid fa-user",
+//   },
+// ];
 
 export const AdminMenu = [
   {
@@ -32,11 +38,11 @@ export const AdminMenu = [
     path: "/",
     icon: "fa-solid fa-house",
   },
-  {
-    name: "Profile",
-    path: "/profile",
-    icon: "fa-solid fa-user",
-  },
+  // {
+  //   name: "Profile",
+  //   path: "/profile",
+  //   icon: "fa-solid fa-user",
+  // },
   {
     name: "Staff",
     path: "/admin/staff",

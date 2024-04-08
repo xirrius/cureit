@@ -181,7 +181,7 @@ const bookAppointment = async (req, res) => {
     user.notification.push({
       type: "new-appointment-request",
       message: `A new appointment request from ${req.body.userInfo.name}`,
-      onClickPath: "/user/appointments",
+      onClickPath: "/doctor-appointments",
     });
     await user.save();
     res.status(200).json({
@@ -251,29 +251,60 @@ const userAppointment = async (req, res) => {
   }
 };
 
+// const updateUser = async (req, res) => {
+//   try {
+//     console.log(req.body);
+//     const user = await User.findOneAndUpdate(
+//       { _id: req.body.userId },
+//       req.body
+//     );
+//     res.status(201).json({
+//       success: true,
+//       message: "Profile data updated.",
+//       data: user,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({
+//       success: false,
+//       message: `Unable to update profile data`,
+//       error,
+//     });
+//    }
+//   }
+
 const updateUser = async (req, res) => {
   try {
+    const { userId, ...userData } = req.body; // Extract userId and userData
     const user = await User.findOneAndUpdate(
-      { userId: req.body.userId },
-      req.body
+      { _id: userId },
+      userData, // Update with extracted data
+      { new: true, runValidators: true } // Options object
     );
-    res.status(201).json({
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+    res.status(200).json({
       success: true,
       message: "Profile data updated.",
       data: user,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({
       success: false,
       message: `Unable to update profile data`,
-      error,
+      error: error.message, // Sending only error message for security
     });
   }
 };
 
-module.exports = {
-  login,
+
+
+module.exports = {  login,
   register,
   authController,
   applyStaffController,

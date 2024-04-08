@@ -1,4 +1,4 @@
-import { AdminMenu, UserMenu } from "../data/Data";
+import { AdminMenu, } from "../data/Data";
 import "../styles/layout-styles.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -13,6 +13,33 @@ const Layout = ({ children }) => {
     message.success("Logout successful");
     navigate("/login");
   };
+  const UserMenu = [
+    {
+      name: "Home",
+      path: "/",
+      icon: "fa-solid fa-house",
+    },
+    // {
+    //   name: "Consult A Doctor",
+    //   path: "/consultations",
+    //   icon: "fa-solid fa-user-doctor",
+    // },
+    {
+      name: "Appointments",
+      path: "/appointments",
+      icon: "fa-solid fa-list-ul",
+    },
+    {
+      name: "Apply for Staff",
+      path: "/apply-staff",
+      icon: "fa-solid fa-user-doctor",
+    },
+    {
+      name: "Profile",
+      path: `/user/profile/${user?._id}`,
+      icon: "fa-solid fa-user",
+    },
+  ];
   const StaffMenu = [
     {
       name: "Home",

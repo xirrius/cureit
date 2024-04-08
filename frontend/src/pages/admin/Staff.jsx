@@ -37,7 +37,7 @@ const Staff = () => {
       );
       if (res.data.success) {
         message.success(res.data.message);
-        window.location.reload()
+        window.location.reload();
       }
     } catch (error) {
       message.error("Something went wrong");
@@ -69,16 +69,20 @@ const Staff = () => {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "pending" ? (
+          {record.status !== "approved" &&
             <button
               className="btn btn-success"
               onClick={() => handleStatus(record, "approved")}
             >
               Approve
             </button>
-          ) : (
-            <button className="btn btn-danger">Reject</button>
-          )}
+          }
+            <button
+              className="btn btn-danger ms-2"
+              onClick={() => handleStatus(record, "rejected")}
+            >
+              Reject
+            </button>
         </div>
       ),
     },

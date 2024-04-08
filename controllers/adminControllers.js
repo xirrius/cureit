@@ -44,6 +44,10 @@ const changeStatus = async (req, res) => {
       onClickPath: "/notification",
     });
     user.isStaff = status === "approved" ? true : false;
+    // delete staff
+    if (status === "rejected") {
+      await Staff.deleteOne({ _id: staffId });
+    }
     await user.save();
     res
       .status(201)
@@ -58,4 +62,20 @@ const changeStatus = async (req, res) => {
   }
 };
 
-module.exports = { getAllStaff, getAllUsers, changeStatus };
+const blockUser = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.body.personId);
+    res
+      .status(201)
+      .json({ success: true, message: `User blocked successfully.` });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      success: false,
+      message: `Unable to block the user.`,
+      error,
+    });
+  }
+};
+
+module.exports = { getAllStaff, getAllUsers, changeStatus, blockUser };
