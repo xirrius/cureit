@@ -11,7 +11,7 @@ const app = express();
 
 // middlewares
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
 app.use(express.json());
 app.use(morgan("dev"));
 
