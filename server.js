@@ -9,6 +9,7 @@ const staffRouter = require("./routes/staffRoutes");
 const path = require("path")
 const app = express();
 
+const __dirname = path.resolve()
 // middlewares
 
 app.use(express.static(path.join(__dirname, "frontend", "dist")));
