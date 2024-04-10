@@ -6,6 +6,7 @@ const connect = require("./config/connectDb");
 const userRouter = require("./routes/userRoutes");
 const adminRouter = require("./routes/adminRoutes");
 const staffRouter = require("./routes/staffRoutes");
+const path = require("path")
 const app = express();
 
 // middlewares
@@ -16,6 +17,11 @@ app.use(morgan("dev"));
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/staff", staffRouter);
+
+app.use(express.static(path.join(__dirname, './frontend/dist')))
+app.get('*', (req, res) => {
+  res.sendFile('./frontend/dist/index.html')
+})
 
 const port = process.env.PORT || 3000;
 
